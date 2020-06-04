@@ -1,0 +1,92 @@
+package kr.irolab.will.userno;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import kr.irolab.will.rest.userno.WillUsernoResPayLoad;
+import kr.irolab.will.rest.userno.contact.WillContactPayLoad;
+import kr.irolab.will.sample.service.ResponsePayload;
+import kr.irolab.will.userno.userWill.WillUserWillReqPayload;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+class WillUsernoResPayLoadTest {
+
+	@BeforeEach
+	void setUp() throws Exception {
+		System.out.println();
+		System.out.println("WillUsernoResPayLoadTest.setUp()");
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+		System.out.println("WillUsernoResPayLoadTest.tearDown()");
+		System.out.println();
+	}
+
+	@Test
+	void testUserWill() throws JsonProcessingException {
+		System.out.println("WillUsernoResPayLoadTest.testUserWill()");
+		WillUserWillReqPayload payload = new WillUserWillReqPayload();
+		
+		payload.setWillNo(1);
+		payload.setWillTilte("철수에게 남기는 편지");
+		payload.setWillText("Lorem ipsum dolor sit amet, consectetur.");
+		payload.setWillImg("url");
+		payload.setWillAttr("friends");
+		payload.setWillCreateDt("2019-01-12");
+		
+		WillUsernoResPayLoad userno = new WillUsernoResPayLoad();
+		userno.setCode(200);
+		userno.setMessage("Success");
+		
+		loggingJson(userno);
+	}
+	
+	@Test
+	void testContact() throws Exception {
+		System.out.println("WillUsernoResPayLoadTest.testContact()");
+		WillContactPayLoad payload = new WillContactPayLoad();
+		
+		payload.setContNo(0);
+		payload.setContName("김철수");
+		payload.setContEmail("kim@sample.com");
+		payload.setContDesc("제일 친한 친구");
+		payload.setContPhone("011-1234-5678");
+		payload.setContRepYn("Y");
+		payload.setContRepAuthYn("Y");
+		payload.setContCatname("친구");
+		
+		WillUsernoResPayLoad userno = new WillUsernoResPayLoad();
+		userno.setCode(200);
+		userno.setMessage("Success");
+		userno.getData().add(payload);
+		
+		loggingJson(userno);
+		
+	}
+	@Test
+	void testFailed() throws Exception {
+		System.out.println("WillUsernoResPayLoadTest.testFailed()");
+
+		WillUsernoResPayLoad userno = new WillUsernoResPayLoad();
+		userno.setCode(500);
+		userno.setMessage("Failed");
+
+		loggingJson(userno);
+	}
+	
+	private void loggingJson(WillUsernoResPayLoad userno) throws JsonProcessingException {
+		ObjectMapper mapper = new ObjectMapper();
+		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(userno);
+		log.info("json {}", json);
+	}
+
+
+}

@@ -1,0 +1,5 @@
+package kr.irolab.will.jpa.test.child;
+
+public class Child {
+
+}

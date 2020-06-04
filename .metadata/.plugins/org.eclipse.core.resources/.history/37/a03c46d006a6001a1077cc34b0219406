@@ -1,0 +1,32 @@
+package kr.irolab.will.userno.contact;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import kr.irolab.will.userno.WillUsernoResPayLoad;
+
+@Service
+public class WillContactService {
+	public WillUsernoResPayLoad gets() {
+//		List<WillContactPayLoad> list = new ArrayList<>();
+		WillContactPayLoad payload = new WillContactPayLoad();
+		WillUsernoResPayLoad userno = new WillUsernoResPayLoad();
+
+		payload.setContNo(0);
+		payload.setContName("김철수");
+		payload.setContEmail("kim@sample.com");
+		payload.setContDesc("제일 친한 친구");
+		payload.setContPhone("011-1234-5678");
+		payload.setContRepYn("Y");
+		payload.setContRepAuthYn("Y");
+		payload.setContCatname("친구");
+		
+		userno.setCode(200);
+		userno.setMessage("Success");
+		userno.getData().add(payload);
+		
+		return userno;
+	}
+}

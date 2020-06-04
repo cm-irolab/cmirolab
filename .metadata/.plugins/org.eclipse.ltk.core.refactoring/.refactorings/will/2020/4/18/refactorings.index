@@ -1,0 +1,10 @@
+1588137157222	Extract local variable 'result'
+1588137373050	Copy compilation unit
+1588137396413	Rename type 'Test2RestController'
+1588137405866	Copy compilation unit
+1588137414791	Rename type 'Test2RestService'
+1588138505212	Extract local variable 'now'
+1588138537084	Extract local variable 'createAt'
+1588138581624	Rename local variable 'req'
+1588138706277	Extract local variable 'json'
+1588138807186	Extract local variable 'content'

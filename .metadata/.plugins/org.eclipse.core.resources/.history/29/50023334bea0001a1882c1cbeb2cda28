@@ -1,0 +1,11 @@
+package kr.irolab.will.jpa.test.child;
+
+import javax.persistence.Id;
+
+public class Child {
+	@Id
+	Integer childId;
+
+	Integer parentId;
+
+}

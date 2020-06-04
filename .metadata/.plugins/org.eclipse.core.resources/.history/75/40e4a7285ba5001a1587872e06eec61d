@@ -1,0 +1,21 @@
+package kr.irolab.will.jpa.board;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+import lombok.Data;
+
+@Data
+@Entity
+public class BoardCategory {
+
+	@Id
+	private Integer categoryNo;
+	private String categoryTitle;
+
+////	@OneToMany
+////	@JoinColumn(name = "boardNo", insertable = false, updatable = false)
+//	private BoardJpaModel boardModel;
+}

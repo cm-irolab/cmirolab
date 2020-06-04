@@ -1,0 +1,25 @@
+package kr.irolab.will.logic.process.auth.login;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import kr.irolab.will.jpa.member.MemberJpaModel;
+import kr.irolab.will.jpa.member.MemberJpaService;
+
+@Service
+public class WillLoginProcessService {
+
+	@Autowired
+	MemberJpaService service;
+
+	List<MemberJpaModel> member = new ArrayList<>();
+	
+	
+	public Optional<MemberJpaModel> findbyId(Integer memberNo){
+		return service.findById(memberNo);
+	}
+}

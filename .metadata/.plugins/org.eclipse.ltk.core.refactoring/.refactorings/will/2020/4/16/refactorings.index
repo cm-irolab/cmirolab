@@ -1,0 +1,10 @@
+1586830067762	Delete element
+1586830071097	Delete element
+1586844977506	Rename package 'willlogin'
+1586844995315	Rename package 'kr.irolab.will.willlogin'
+1586845164064	Extract local variable 'req'
+1586845204434	Extract local variable 'mapper'
+1586845298110	Extract local variable 'json'
+1587004669224	Delete elements
+1587090788715	Rename type 'WillPostListController'
+1587091137986	Rename compilation unit 'WillTotalController.java'

@@ -1,0 +1,31 @@
+1587433322249	Delete element
+1587433326813	Delete element
+1587525982542	Extract local variable 'json'
+1587526194128	Rename method 'test2'
+1587526198779	Rename method 'test'
+1587526599865	Rename type 'PostResponsePayload'
+1587526602444	Rename type 'PostResponsePayloadTest'
+1587527200888	Extract method 'loggingJson'
+1587527249278	Extract local variable 'text'
+1587537922956	Rename type 'WillPostListData'
+1587537972312	Rename type 'WillPostListStatus'
+1587538070325	Rename type 'WillPostListResPayLoad'
+1587538109815	Rename type 'Will'
+1587538255951	Rename type 'WillOpen'
+1587541638565	Rename type 'WillMagazineResPayLoad'
+1587541666845	Rename type 'WillPostListReqPayLoad'
+1587541672670	Rename type 'WillPostListReqPayLoadTest'
+1587541701386	Rename type 'WillPostListService'
+1587541717012	Rename type 'WillPostListController'
+1587542447448	Rename type 'WillPostMagazineResPayLoad'
+1587542511336	Delete element
+1587542563873	Rename type 'WillPublicWillPayLoad'
+1587542576332	Delete element
+1587542588931	Rename type 'WillPublicWillController'
+1587542600134	Rename type 'WillPublicWillService'
+1587545772235	Rename type 'WillOpenWillReqPayLoad'
+1587545782187	Rename type 'WillPostMagazineReqPayLoad'
+1587545784546	Rename type 'WillPostMagazineReqPayLoadTest'
+1587627622827	Delete element
+1587693340205	Delete element
+1587693678600	Delete element

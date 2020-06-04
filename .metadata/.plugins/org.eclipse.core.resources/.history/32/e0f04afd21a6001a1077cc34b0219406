@@ -1,0 +1,49 @@
+package kr.irolab.will.jpa.contact;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import kr.irolab.will.jpa.willList.ListJpaPation;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@JsonInclude(Include.NON_NULL)
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "CONTACT",                        // 1. 테이블
+	uniqueConstraints = {                       // 2. UNIQUE 그룹
+        @UniqueConstraint(columnNames = {       // 2.1 목록
+                "CONT_NO"                           //
+                , "USER_INFO"                  //
+        })                                      //
+	}                                           // 2. UNIQUE 그룹 - 끝
+)
+public class ContactJpaModel {
+	@Id
+	@Column(name="CONT_NO")
+	Integer contNo;			//연락처 번호
+	
+	@Column
+	String userInfo;
+	
+	String contName;		//연락처 이름
+	String contEmail;		//연락처 이메일
+	String contPhone;		//연락처 전화번호
+	String contDesc;		//연락처 설명
+	String contRepYn;		//대표친구 여부
+	String contRepAuthYn;	//대표친구 인증 여부
+	private ListJpaPation listJpaPation;
+
+//	@OneToOne
+//	@JoinColumn(name = "no", insertable = false, updatable = false)
+//	private MemberJpaModel member;
+}

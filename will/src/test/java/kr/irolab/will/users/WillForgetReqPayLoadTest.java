@@ -1,0 +1,48 @@
+package kr.irolab.will.users;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import kr.irolab.will.rest.users.WillForgetReqPayLoad;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+class WillForgetReqPayLoadTest {
+
+	@BeforeEach
+	void setUp() throws Exception {
+		System.out.println();
+		System.out.println("WillForgetReqPayLoadTest.setUp()");
+		
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+		System.out.println();
+		System.out.println("WillForgetReqPayLoadTest.tearDown()");
+	}
+
+	@Test
+	void test() throws JsonProcessingException {
+		System.out.println("WillForgetReqPayLoadTest.test()");
+		WillForgetReqPayLoad req = new WillForgetReqPayLoad();
+		req.setUserEmail("이메일");
+		
+		ObjectMapper mapper = new ObjectMapper();
+		String json = mapper.writeValueAsString(req);
+		System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json));
+		log.info("json = ", json);
+		
+	}
+	@Test
+	void test2() {
+		System.out.println("WillForgetReqPayLoadTest.test2()");
+	}
+
+}

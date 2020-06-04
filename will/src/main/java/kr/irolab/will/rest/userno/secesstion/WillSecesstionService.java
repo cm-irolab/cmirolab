@@ -1,0 +1,30 @@
+package kr.irolab.will.rest.userno.secesstion;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import kr.irolab.will.rest.userno.WillUsernoResPayLoad;
+
+@Service
+public class WillSecesstionService {
+
+	public WillUsernoResPayLoad resPost() {
+		WillUsernoResPayLoad userno = new WillUsernoResPayLoad();
+		userno.setCode(200);
+		userno.setMessage("Success");
+
+		return userno;
+	}
+	
+	public List<WillSecesstionReqPayLoad> reqPost(){
+		List<WillSecesstionReqPayLoad> list = new ArrayList<>();
+		WillSecesstionReqPayLoad req = new WillSecesstionReqPayLoad();
+		req.setUserNo(0);
+		req.setUserName("홍길동");
+		list.add(req);
+		
+		return list;
+	}
+}

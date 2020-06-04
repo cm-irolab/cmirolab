@@ -1,0 +1,17 @@
+package kr.irolab.will.jpa.test.parent;
+
+import javax.persistence.Id;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+
+import kr.irolab.will.jpa.test.child.Child;
+
+public class Parent {
+
+	@Id
+	Integer parentId;
+
+	@OneToOne
+	@MapsId
+	Child child;
+}

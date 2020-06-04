@@ -1,0 +1,45 @@
+package kr.irolab.will.userno.alive;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import kr.irolab.will.userno.WillUsernoResPayLoad;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class WillUserAliveService {
+
+	public WillUsernoResPayLoad aliveRegisterGets() {
+//		List<WillUserAliveResPayLoad> list = new ArrayList<>();
+		WillUserAliveResPayLoad res = new WillUserAliveResPayLoad();
+
+		res.setAliveSendHopeYn("Y");
+		res.setAliveStartDt("2020-4-01");
+		res.setAliveUserConfirmEndDt("2020-04-08");
+		res.setAliveFdConfirmEndDt("2020-04-23");
+
+		WillUsernoResPayLoad userno = new WillUsernoResPayLoad();
+		userno.setCode(200);
+		userno.setMessage("Success");
+		userno.getData().add(res);
+
+		return userno;
+
+	}
+
+	public List<WillUserAliveReqPayLoad> aliveUpdatePost() {
+		List<WillUserAliveReqPayLoad> list = new ArrayList<>();
+		WillUserAliveReqPayLoad req = new WillUserAliveReqPayLoad();
+
+		req.setAliveSendHopeYn("Y");
+		req.setAliveStartDt("2020-4-07");
+		req.setAliveUserConfirmEndDt("2020-04-15");
+		req.setAliveFdConfirmEndDt("2020-04-30");
+		list.add(req);
+
+		return list;
+	}
+}

@@ -1,0 +1,44 @@
+package kr.irolab.will.userno;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Service;
+
+import kr.irolab.will.userno.WillUsernoResPayLoad;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class WillMemberService {
+
+	public WillUsernoResPayLoad gets() {
+		WillUsernoResPayLoad userno = new WillUsernoResPayLoad();
+		WillMemberResPayLoad res = new WillMemberResPayLoad();
+		res.setUserNo("0");
+		res.setUserName("홍길동");
+		res.setUserEmail("sample@sample.com");
+		res.setUserPhone("010-1234-5678");
+		
+		userno.setCode(200);
+		userno.setMessage("Success");
+		userno.getData().add(res);
+		
+		return userno;
+	}
+	
+	public List<WillMemberReqPayLoad> post(@Valid WillMemberReqPayLoad req2){
+		List<WillMemberReqPayLoad> list = new ArrayList<>();
+		WillMemberReqPayLoad req = new WillMemberReqPayLoad();
+		
+		req.setUserNo("0");
+		req.setUserName("임꺽정");
+		req.setUserEmail("sample@sample.com");
+		req.setUserPhone("010-1342-5611");
+		list.add(req);
+		
+		return list;
+	}
+}

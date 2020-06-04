@@ -1,0 +1,44 @@
+package kr.irolab.will.jpa.willList;
+
+import java.util.List;
+
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import kr.irolab.will.jpa.contact.ContactJpaModel;
+import kr.irolab.will.jpa.member.MemberJpaModel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "WILLLIST")
+public class ListJpaModel {
+
+
+	@EmbeddedId
+	private ListJpaPation listJpaPation;
+
+	@OneToOne
+	@JoinColumn(name = "MEMBER_NO", insertable = false, updatable = false)
+	private MemberJpaModel member;
+	
+	private Integer memberNo = 0; 			// 회원 번호
+
+	private String willTitle;
+	private String willText;
+	private String willFile;
+	private String willCreateDt;
+
+//	@OneToMany
+//	@JoinColumn(name = "listJpaPation", insertable = false, updatable = false)
+//	private List<ContactJpaModel> contact;
+//
+}

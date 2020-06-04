@@ -1,0 +1,9 @@
+package kr.irolab.will.test2;
+
+import lombok.Data;
+
+@Data
+class Test2ResultPayload {
+	String val = "1";
+	String name = "임채민";
+}

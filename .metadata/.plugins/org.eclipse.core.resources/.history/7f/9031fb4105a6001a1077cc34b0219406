@@ -1,0 +1,9 @@
+package kr.irolab.will.auth.login;
+
+import lombok.Data;
+
+@Data
+public class WillLoginResPayLoad {
+	String id = "coals2020";
+	String password = "123456";
+}

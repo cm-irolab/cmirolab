@@ -1,0 +1,30 @@
+package kr.irolab.will.rest.auth.service.board;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class WillPostMagazineService {
+
+	public List<WillPostMagazinePayLoad> gets() {
+		List<WillPostMagazinePayLoad> list = new ArrayList<>();
+		WillPostMagazinePayLoad payload = new WillPostMagazinePayLoad();
+
+		payload.setPostNo(1);
+		payload.setPostCatname("매거진이름");
+		payload.setPostTitle("매거진제목");
+		payload.setPostText("매거진내용");
+		payload.setPostFile("주소");
+		payload.setPostCreateDt("생성일");
+		list.add(payload);
+
+		return list;
+
+	}
+
+}

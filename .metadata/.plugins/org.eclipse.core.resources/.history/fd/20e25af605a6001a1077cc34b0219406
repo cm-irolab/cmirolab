@@ -1,0 +1,12 @@
+package kr.irolab.will.auth.login;
+
+import javax.validation.constraints.NotBlank;
+
+import lombok.Data;
+
+@Data
+public class WillLoginReqPayLoad {
+	@NotBlank
+	String userId;
+	String userPw;
+}

@@ -1,0 +1,38 @@
+package kr.irolab.will.jpa.member;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@Service
+public class MemberJpaService {
+
+	@Autowired
+	MemberRepository repository;
+
+	public List<MemberJpaModel> findAll() {
+		return repository.findAll();
+	}
+
+	public MemberJpaModel insert(MemberJpaModel model) {
+		MemberJpaModel memberModel = repository.save(model);
+		return memberModel;
+	}
+
+	public MemberJpaModel update(MemberJpaModel model) {
+		MemberJpaModel memberModel = repository.save(model);
+		return memberModel;
+
+	}
+
+	public Optional<MemberJpaModel> select(@PathVariable Integer Id) {
+		Optional<MemberJpaModel> opt = repository.findById(Id);
+		return opt;
+
+	}
+	
+	
+}

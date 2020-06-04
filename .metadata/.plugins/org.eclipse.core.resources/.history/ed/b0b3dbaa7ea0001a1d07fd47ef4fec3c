@@ -1,0 +1,38 @@
+package kr.irolab.will.jpa.board;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import kr.irolab.will.jpa.member.MemberJpaModel;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "board")
+public class BoardJpaModel {
+	@Id
+	private Integer boardNo; 		// 게시판 번호 (매거진,QNA)
+	private String boardTitle; 		// 게시판 제목 (매거진,QNA)
+	private String boardText; 		// 게시판 내용 (매거진,QNA)
+	private String boardCreateDt; 	// 게시판 생성 날짜 (매거진,QNA)
+	private String boardFile; 		// 게시판 파일유형 (매거진)
+	private String boardAnsDt; 		// 답변 날짜 (QNA)
+	private String boardAnsText;	// 답변 내용 (QNA)
+	private String boardAnsWhe;		// 답변 여부 (QNA)
+
+//	@OneToOne
+//	@JoinColumn(name = "no", insertable = false, updatable = false)
+//	private MemberJpaModel member;
+//	
+////	@OneToMany(mappedBy = "boardModel")
+////	@OneToMany
+//	private List<BoardCategory> list = new ArrayList<>();
+
+}

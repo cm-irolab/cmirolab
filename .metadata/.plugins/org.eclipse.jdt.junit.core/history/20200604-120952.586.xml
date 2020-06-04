@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="WillLoginControllerTest (1)" project="will" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="kr.irolab.will.rest.auth.login.WillLoginControllerTest" time="0.32" displayname="WillLoginControllerTest" uniqueid="[engine:junit-jupiter]/[class:kr.irolab.will.rest.auth.login.WillLoginControllerTest]">
+    <testcase name="controllerTest" classname="kr.irolab.will.rest.auth.login.WillLoginControllerTest" time="0.32" displayname="controllerTest()" uniqueid="[engine:junit-jupiter]/[class:kr.irolab.will.rest.auth.login.WillLoginControllerTest]/[method:controllerTest()]"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,40 @@
+package kr.irolab.will.userno.alive;
+
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import kr.irolab.will.rest.userno.WillUsernoResPayLoad;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RestController
+@RequestMapping("/api/userno")
+public class WillUserAliveController {
+
+	@Autowired
+	WillUserAliveService service;
+
+	@GetMapping("/{user_no}/user-alive")
+	public ResponseEntity<?> gets() {
+		WillUsernoResPayLoad res = service.aliveRegisterGets();
+		return ResponseEntity.ok(res);
+	}
+
+	@PostMapping("/{user_no}/user_alive")
+	public ResponseEntity<?> post() {
+
+		List<WillUserAliveReqPayLoad> result = service.aliveUpdatePost();
+		return ResponseEntity.ok(result);
+	}
+
+}

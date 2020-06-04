@@ -1,0 +1,9 @@
+package kr.irolab.will.userno.secesstion;
+
+import lombok.Data;
+
+@Data
+public class WillSecesstionReqPayLoad {
+	 Integer UserNo=null;
+	 String UserName=null;
+}
